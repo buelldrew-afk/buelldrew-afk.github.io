@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cool Drone Footage | Drew Buell</title>
+  <meta name="description" content="Drone footage of the High Sierra, Lake Tahoe and the American River by Drew Buell.">
+  <meta property="og:title" content="Cool Drone Footage">
+  <meta property="og:description" content="Drone footage of the High Sierra, Lake Tahoe and the American River.">
+  <meta property="og:image" content="media/donner-reveal.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="hero">
+    <video class="hero-video" src="media/donner-reveal.mp4" poster="media/donner-reveal.jpg"
+           autoplay muted loop playsinline aria-hidden="true"></video>
+    <div class="hero-shade"></div>
+    <nav class="topnav">
+      <a class="brand" href="#">Cool Drone Footage</a>
+      <div class="navlinks">
+        <a href="#films">Films</a>
+        <a href="#gallery">Gallery</a>
+        <a href="https://www.youtube.com/@DrewBuell" target="_blank" rel="noopener">YouTube</a>
+      </div>
+    </nav>
+    <div class="hero-text">
+      <p class="eyebrow">Drone footage by Drew Buell</p>
+      <h1>Donner Summit</h1>
+      <p class="lede">Granite summits, alpine lakes and the canyons of the American River, filmed from the air.</p>
+      <a class="button" href="#films">Watch the films</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="films" class="section">
+      <div class="section-head">
+        <h2>Films</h2>
+      </div>
+      <div class="films" id="film-list"></div>
+    </section>
+
+    <section id="gallery" class="section">
+      <div class="section-head">
+        <h2>Gallery</h2>
+        <p>Individual shots, looping silently. Click any one to see it full size.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filter clips">
+        <button class="chip is-active" data-filter="all">All</button>
+        <button class="chip" data-filter="sierras">High Sierra &amp; Tahoe</button>
+        <button class="chip" data-filter="river">American River</button>
+        <button class="chip" data-filter="fpv">First Person</button>
+      </div>
+      <div class="grid" id="grid"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Filmed in the Sierra Nevada and the foothills of El Dorado and Placer Counties, California.</p>
+    <p><a href="https://www.youtube.com/@DrewBuell" target="_blank" rel="noopener">More on YouTube →</a></p>
+  </footer>
+
+  <div class="viewer" id="viewer" hidden>
+    <button class="viewer-close" aria-label="Close">×</button>
+    <button class="viewer-nav prev" aria-label="Previous clip">‹</button>
+    <figure class="viewer-body">
+      <video id="viewer-video" muted loop playsinline controls></video>
+      <figcaption>
+        <span id="viewer-title"></span>
+        <a id="viewer-film" href="#" target="_blank" rel="noopener"></a>
+      </figcaption>
+    </figure>
+    <button class="viewer-nav next" aria-label="Next clip">›</button>
+  </div>
+
+  <script src="clips.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
