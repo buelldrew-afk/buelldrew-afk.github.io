@@ -9,7 +9,6 @@ window.CLIPS = [
   { slug: "zephyr-cove", group: "sierras", title: "Zephyr Cove" },
   { slug: "leaving-the-deck", group: "sierras", title: "Leaving the Deck" },
   { slug: "tahoe-shoreline", group: "sierras", title: "Tahoe Shoreline" },
-  { slug: "cave-rock-approach", group: "sierras", title: "Cave Rock Approach" },
   { slug: "cave-rock", group: "sierras", title: "Cave Rock" },
   { slug: "nevada-cave-rock", group: "sierras", title: "Around Cave Rock" },
   { slug: "quarry-trail-morning", group: "river", title: "Quarry Trail, Morning" },
