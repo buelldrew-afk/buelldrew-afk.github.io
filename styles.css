@@ -147,6 +147,7 @@ h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.8rem, 3.5vw
   display: flex; flex-wrap: wrap; gap: 8px 32px; justify-content: space-between;
 }
 .footer p { margin: 0; }
+.footer .legal { flex-basis: 100%; font-size: .8rem; }
 
 /* Full-size viewer */
 .viewer {
