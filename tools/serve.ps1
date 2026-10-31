@@ -1,8 +1,8 @@
 # Serves the website at http://localhost:8080 for previewing on this computer.
 # Usage: powershell -ExecutionPolicy Bypass -File tools\serve.ps1
 param([int]$Port = 8080)
-$root = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
-$types = @{ '.html'='text/html; charset=utf-8'; '.css'='text/css'; '.js'='text/javascript'; '.mp4'='video/mp4'; '.jpg'='image/jpeg'; '.png'='image/png'; '.svg'='image/svg+xml'; '.ico'='image/x-icon' }
+$root = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path  # the whole site: author pages, drone/, privacy and terms
+$types = @{ '.html'='text/html; charset=utf-8'; '.css'='text/css'; '.js'='text/javascript'; '.mp4'='video/mp4'; '.jpg'='image/jpeg'; '.png'='image/png'; '.svg'='image/svg+xml'; '.ico'='image/x-icon'; '.json'='application/json' }
 $listener = [System.Net.HttpListener]::new()
 $listener.Prefixes.Add("http://localhost:$Port/")
 $listener.Start()
@@ -14,6 +14,10 @@ while ($listener.IsListening) {
     $rel = [Uri]::UnescapeDataString($req.Url.AbsolutePath.TrimStart('/'))
     if ($rel -eq '') { $rel = 'index.html' }
     $path = [IO.Path]::GetFullPath((Join-Path $root $rel))
+    if (Test-Path $path -PathType Container) {
+      if (-not $rel.EndsWith('/')) { $res.Redirect("/$rel/"); $res.Close(); continue }
+      $path = Join-Path $path 'index.html'
+    }
     if (-not $path.StartsWith($root) -or -not (Test-Path $path -PathType Leaf)) {
       $res.StatusCode = 404; $res.Close(); continue
     }

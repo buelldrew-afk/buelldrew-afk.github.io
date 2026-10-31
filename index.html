@@ -1,83 +1,470 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cool Drone Footage | Drew Buell</title>
-  <meta name="description" content="Drone footage of the High Sierra, Lake Tahoe and the American River by Drew Buell.">
-  <meta property="og:title" content="Cool Drone Footage">
-  <meta property="og:description" content="Drone footage of the High Sierra, Lake Tahoe and the American River.">
-  <meta property="og:image" content="media/donner-reveal.jpg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Drew Buell | Pastor &amp; Author</title>
+<meta name="description" content="Dr. Drew Buell is pastor-teacher of Cool Community Church in Cool, California, and the author of nine books. Sermons, devotionals, books, and essays.">
+<meta property="og:title" content="Dr. Drew Buell">
+<meta property="og:description" content="Pastor-teacher of Cool Community Church and author. Sermons, devotionals, books, and essays.">
+<meta property="og:image" content="https://www.drewbuell.com/img/drew.jpg">
+<meta property="og:url" content="https://www.drewbuell.com/">
+<link rel="icon" href="img/drew.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body { margin: 0; }
+img { max-width: 100%; display: block; }
+/* Layout: warm paper pages with deep foothill-green bands, and one autumn-gold
+   accent taken from the portrait. Personal rather than the imprint's ink-and-brass. */
+:root {
+  --paper: #f7f2ea;
+  --paper-2: #efe6d8;
+  --ink: #1f2420;
+  --muted: #5f645c;
+  --rule: #ddd2c1;
+  --forest: #1d3328;
+  --forest-2: #24402f;
+  --on-forest: #eef0e8;
+  --muted-on-forest: #b3bfae;
+  --rule-forest: #35503f;
+  --gold: #c7932f;
+  --gold-deep: #94681a;
+  --display: "Newsreader", Georgia, "Times New Roman", serif;
+  --body: "Newsreader", Georgia, "Times New Roman", serif;
+  --label: "Public Sans", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 19px; line-height: 1.6; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.eyebrow { font-family: var(--label); font-weight: 600; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-deep); }
+h1, h2, h3 { font-family: var(--display); font-weight: 500; text-wrap: balance; margin: 0; line-height: 1.1; }
+.btns { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn { font-family: var(--label); font-weight: 500; font-size: 0.82rem; letter-spacing: 0.04em; text-decoration: none; padding: 12px 20px; border-radius: 999px; border: 1px solid var(--forest); color: var(--forest); display: inline-block; }
+.btn.solid { background: var(--forest); color: var(--on-forest); }
+.btn:hover { background: var(--forest-2); border-color: var(--forest-2); color: var(--on-forest); }
+.more { font-family: var(--label); font-weight: 500; font-size: 0.85rem; text-decoration: none; color: var(--gold-deep); }
+.more:hover { text-decoration: underline; }
+
+/* header */
+.top { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; }
+.name { font-family: var(--display); font-size: 1.45rem; font-weight: 500; text-decoration: none; letter-spacing: 0.01em; }
+nav ul { display: flex; flex-wrap: wrap; gap: 6px 24px; list-style: none; margin: 0; padding: 0; }
+nav a { font-family: var(--label); font-size: 0.82rem; font-weight: 500; text-decoration: none; color: var(--muted); }
+nav a:hover { color: var(--ink); }
+
+/* hero */
+.hero { padding-block: 64px 80px; overflow-x: clip; }
+.hero .wrap { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 64px; align-items: center; }
+.hero-copy { min-width: 0; }
+.hero h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); margin: 14px 0 0; letter-spacing: -0.01em; }
+.hero h1 em { color: var(--gold-deep); }
+.hero .lede { font-size: 1.22rem; color: var(--muted); max-width: 34ch; margin: 22px 0 32px; }
+.hero-photo { position: relative; min-width: 0; }
+.hero-photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%; border-radius: 4px; }
+.hero-photo::before { content: ""; position: absolute; inset: 18px -18px -18px 18px; border: 1px solid var(--gold); border-radius: 4px; z-index: -1; }
+.roles { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 36px; padding: 0; list-style: none; }
+.roles li { font-family: var(--label); font-size: 0.78rem; color: var(--muted); border: 1px solid var(--rule); border-radius: 999px; padding: 5px 12px; }
+
+section.band { padding-block: 88px; }
+.sec-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 12px 32px; margin-bottom: 44px; }
+.sec-head h2 { font-size: clamp(2rem, 4vw, 2.9rem); margin-top: 10px; }
+.sec-head p { margin: 0; max-width: 44ch; color: var(--muted); font-size: 1.02rem; }
+
+/* books */
+.books-band { background: var(--paper-2); }
+.featured { display: grid; grid-template-columns: 230px 1fr; gap: 48px; align-items: center; padding-bottom: 56px; margin-bottom: 56px; border-bottom: 1px solid var(--rule); }
+.featured img { width: 100%; aspect-ratio: 5 / 8; object-fit: cover; box-shadow: 0 24px 40px -20px rgba(31,36,32,.55); }
+.featured .copy { min-width: 0; max-width: 54ch; }
+.featured h3 { font-size: clamp(1.8rem, 3.4vw, 2.4rem); margin: 10px 0 14px; }
+.featured p { margin: 0 0 24px; color: var(--muted); }
+.books { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 36px 28px; }
+.book { display: flex; flex-direction: column; gap: 10px; min-width: 0; text-decoration: none; }
+.book img { width: 100%; aspect-ratio: 5 / 8; object-fit: cover; background: var(--rule); box-shadow: 0 12px 22px -14px rgba(31,36,32,.55); transition: transform .25s ease; }
+.book:hover img { transform: translateY(-4px); }
+.book .t { font-family: var(--display); font-size: 1.05rem; line-height: 1.2; font-weight: 500; }
+.book .y { font-family: var(--label); font-size: 0.72rem; color: var(--muted); }
+.coming { margin-top: 56px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px 32px; padding: 26px 28px; border: 1px solid var(--rule); border-radius: 6px; background: var(--paper); }
+.coming p { margin: 0; max-width: 60ch; }
+.coming strong { font-family: var(--display); font-weight: 600; }
+
+/* sermons: green band */
+.watch { background: var(--forest); color: var(--on-forest); }
+.watch .eyebrow { color: var(--gold); }
+.watch .sec-head p { color: var(--muted-on-forest); }
+.player { position: relative; aspect-ratio: 16 / 9; background: #000; border-radius: 6px; overflow: hidden; box-shadow: 0 30px 60px -30px #000; }
+.player iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.player-cap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 20px; margin: 16px 0 36px; font-family: var(--label); font-size: 0.85rem; color: var(--muted-on-forest); }
+.player-cap b { color: var(--on-forest); font-weight: 500; }
+.player-cap a { color: var(--gold); text-decoration: none; }
+.lists { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.list { all: unset; cursor: pointer; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.list .thumb { position: relative; aspect-ratio: 16 / 9; border-radius: 4px; overflow: hidden; background: var(--forest-2); outline: 2px solid transparent; outline-offset: 3px; transition: outline-color .2s; }
+.list .thumb img { width: 100%; height: 100%; object-fit: cover; }
+.list .count { position: absolute; right: 6px; bottom: 6px; font-family: var(--label); font-size: 0.7rem; background: rgba(0,0,0,.75); color: #fff; padding: 2px 7px; border-radius: 3px; }
+.list .t { font-family: var(--display); font-size: 1.12rem; line-height: 1.2; }
+.list .d { font-family: var(--label); font-size: 0.78rem; color: var(--muted-on-forest); line-height: 1.4; }
+.list[aria-pressed="true"] .thumb { outline-color: var(--gold); }
+.list:hover .t { color: var(--gold); }
+.list:focus-visible .thumb { outline-color: var(--on-forest); }
+.archive { margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--rule-forest); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px 32px; }
+.archive p { margin: 0; max-width: 58ch; color: var(--muted-on-forest); font-size: 1rem; }
+.watch .btn { border-color: var(--on-forest); color: var(--on-forest); }
+.watch .btn.solid { background: var(--gold); border-color: var(--gold); color: var(--forest); }
+.watch .btn:hover { background: var(--on-forest); color: var(--forest); border-color: var(--on-forest); }
+
+/* writing */
+.essays { display: grid; grid-template-columns: 1.3fr 1fr; gap: 24px 48px; }
+.essay { display: flex; flex-direction: column; gap: 8px; text-decoration: none; min-width: 0; }
+.essay img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 4px; background: var(--paper-2); margin-bottom: 8px; }
+.essay .y { font-family: var(--label); font-size: 0.74rem; color: var(--muted); }
+.essay .t { font-family: var(--display); font-size: 1.35rem; line-height: 1.2; font-weight: 500; }
+.essay .d { color: var(--muted); font-size: 1rem; }
+.essay.lead { grid-row: span 3; }
+.essay.lead .t { font-size: 2rem; }
+.essay:not(.lead) img { display: none; }
+.essay:not(.lead) + .essay:not(.lead) { border-top: 1px solid var(--rule); padding-top: 22px; }
+.essay:hover .t { color: var(--gold-deep); }
+.subscribe { margin-top: 48px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; }
+.subscribe p { margin: 0; color: var(--muted); font-size: 1rem; }
+
+/* about */
+.about { border-top: 1px solid var(--rule); }
+.about .wrap { display: grid; grid-template-columns: 1fr 320px; gap: 64px; align-items: start; }
+.bio { max-width: 62ch; min-width: 0; }
+.bio h2 { font-size: clamp(2rem, 4vw, 2.9rem); margin: 10px 0 24px; }
+.bio p { margin: 0 0 1.05em; }
+.facts { list-style: none; padding: 0; margin: 0; display: grid; gap: 0; border-top: 2px solid var(--forest); min-width: 0; }
+.facts li { padding: 14px 0; border-bottom: 1px solid var(--rule); font-size: 0.98rem; line-height: 1.45; }
+.facts span { display: block; font-family: var(--label); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+
+/* church: photo band */
+.church { position: relative; color: #fff; background: var(--forest) url("img/canyon.jpg") center / cover no-repeat; }
+.church::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(18,30,23,.92) 0%, rgba(18,30,23,.78) 50%, rgba(18,30,23,.35) 100%); }
+.church .wrap { position: relative; padding-block: 96px; }
+.church .eyebrow { color: var(--gold); }
+.church h2 { font-size: clamp(2rem, 4vw, 2.9rem); margin: 10px 0 18px; max-width: 18ch; }
+.church p { max-width: 46ch; margin: 0 0 12px; color: #e3e8df; }
+.church .when { font-family: var(--label); font-size: 0.9rem; margin: 22px 0 30px; color: #fff; }
+.church .btn { border-color: #fff; color: #fff; }
+.church .btn.solid { background: #fff; color: var(--forest); }
+.church .btn:hover { background: var(--gold); border-color: var(--gold); color: var(--forest); }
+
+/* drone: a small side-by-side teaser for the drone site */
+.drone { padding-bottom: 0; }
+.drone .wrap { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
+.drone-shot { display: block; border-radius: 6px; overflow: hidden; min-width: 0; }
+.drone-shot img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; transition: transform .4s ease; }
+.drone-shot:hover img { transform: scale(1.03); }
+.drone-copy { min-width: 0; }
+.drone-copy h2 { font-size: clamp(1.8rem, 3.4vw, 2.4rem); margin: 10px 0 14px; }
+.drone-copy p { margin: 0 0 24px; color: var(--muted); max-width: 40ch; }
+
+/* elsewhere */
+.elsewhere { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); border-top: 1px solid var(--rule); border-left: 1px solid var(--rule); }
+.link { background: var(--paper); box-shadow: inset -1px -1px 0 var(--rule); padding: 24px 22px; text-decoration: none; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.link .k { font-family: var(--label); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-deep); }
+.link .t { font-family: var(--display); font-size: 1.3rem; line-height: 1.2; }
+.link .d { font-size: 0.92rem; color: var(--muted); line-height: 1.45; }
+.link:hover { background: #fffaf2; }
+.link:hover .t { color: var(--gold-deep); }
+
+footer { background: var(--forest); color: var(--muted-on-forest); padding-block: 36px; font-family: var(--label); font-size: 0.82rem; }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 32px; }
+footer p { margin: 0; }
+footer a { color: var(--on-forest); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+footer .legal { flex-basis: 100%; font-size: 0.76rem; }
+
+@media (max-width: 900px) {
+  .drone .wrap { grid-template-columns: 1fr; gap: 28px; }
+  .hero .wrap, .about .wrap { grid-template-columns: 1fr; gap: 48px; }
+  .hero-photo { max-width: 380px; margin-right: 18px; }
+  .lists { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .essays { grid-template-columns: 1fr; }
+  .essay.lead { grid-row: auto; }
+}
+@media (max-width: 640px) {
+  body { font-size: 18px; }
+  .top .wrap { flex-direction: column; align-items: flex-start; gap: 8px; padding-block: 10px; }
+  nav ul { gap: 4px 16px; }
+  .hero { padding-block: 40px 64px; }
+  section.band { padding-block: 64px; }
+  .featured { grid-template-columns: 1fr; gap: 28px; }
+  .featured img { width: 180px; }
+  .books { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 18px; }
+  .lists { gap: 24px 14px; }
+  .church::before { background: rgba(18,30,23,.85); }
+  .church .wrap { padding-block: 72px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .book img { transition: none; } .book:hover img, .drone-shot:hover img { transform: none; } }
+</style>
 </head>
 <body>
 
-  <header class="hero">
-    <video class="hero-video" src="media/donner-reveal.mp4" poster="media/donner-reveal.jpg"
-           autoplay muted loop playsinline aria-hidden="true"></video>
-    <div class="hero-shade"></div>
-    <nav class="topnav">
-      <a class="brand" href="#">Cool Drone Footage</a>
-      <div class="navlinks">
-        <a href="#films">Films</a>
-        <a href="#gallery">Gallery</a>
-        <a href="https://www.youtube.com/@DrewBuell" target="_blank" rel="noopener">YouTube</a>
-      </div>
+<header class="top">
+  <div class="wrap">
+    <a class="name" href="#top">Drew Buell</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#books">Books</a></li>
+        <li><a href="#watch">Sermons</a></li>
+        <li><a href="#writing">Writing</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#church">Church</a></li>
+        <li><a href="drone/">Drone</a></li>
+      </ul>
     </nav>
-    <div class="hero-text">
-      <p class="eyebrow">Drone footage by Drew Buell</p>
-      <h1>Donner Summit</h1>
-      <p class="lede">Granite summits, alpine lakes and the canyons of the American River, filmed from the air.</p>
-      <a class="button" href="#films">Watch the films</a>
-    </div>
-  </header>
-
-  <main>
-    <section id="films" class="section">
-      <div class="section-head">
-        <h2>Films</h2>
-      </div>
-      <div class="films" id="film-list"></div>
-    </section>
-
-    <section id="gallery" class="section">
-      <div class="section-head">
-        <h2>Gallery</h2>
-        <p>Individual shots, looping silently. Click any one to see it full size.</p>
-      </div>
-      <div class="filters" role="group" aria-label="Filter clips">
-        <button class="chip is-active" data-filter="all">All</button>
-        <button class="chip" data-filter="sierras">High Sierra &amp; Tahoe</button>
-        <button class="chip" data-filter="river">American River</button>
-        <button class="chip" data-filter="fpv">First Person</button>
-      </div>
-      <div class="grid" id="grid"></div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <p>Filmed in the Sierra Nevada and the foothills of El Dorado and Placer Counties, California.</p>
-    <p><a href="https://www.youtube.com/@DrewBuell" target="_blank" rel="noopener">More on YouTube →</a></p>
-    <p class="legal">Sermon Uploader uses YouTube API Services. <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a></p>
-  </footer>
-
-  <div class="viewer" id="viewer" hidden>
-    <button class="viewer-close" aria-label="Close">×</button>
-    <button class="viewer-nav prev" aria-label="Previous clip">‹</button>
-    <figure class="viewer-body">
-      <video id="viewer-video" muted loop playsinline controls></video>
-      <figcaption>
-        <span id="viewer-title"></span>
-        <a id="viewer-film" href="#" target="_blank" rel="noopener"></a>
-      </figcaption>
-    </figure>
-    <button class="viewer-nav next" aria-label="Next clip">›</button>
   </div>
+</header>
 
-  <script src="clips.js"></script>
-  <script src="app.js"></script>
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <div class="eyebrow">Pastor &middot; Author &middot; Cool, California</div>
+        <h1>Dr. Drew Buell</h1>
+        <p class="lede">Pastor-teacher of Cool Community Church since 2010. Drew preaches through books of the Bible verse by verse, and most of what he writes begins in the pulpit.</p>
+        <div class="btns">
+          <a class="btn solid" href="#watch">Watch a sermon</a>
+          <a class="btn" href="#books">Read the books</a>
+        </div>
+        <ul class="roles" aria-label="Find Drew on">
+          <li>Nine books in print</li>
+          <li>Sermons &amp; devotionals on YouTube</li>
+          <li>Essays on Substack</li>
+        </ul>
+      </div>
+      <div class="hero-photo">
+        <img src="img/drew.jpg" alt="Drew Buell, smiling, outdoors in autumn light">
+      </div>
+    </div>
+  </section>
+
+  <section class="band books-band" id="books">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><div class="eyebrow">Books</div><h2>From the pulpit to the page</h2></div>
+        <p>Every title is available on Amazon. Select a cover to go to its page.</p>
+      </div>
+
+      <div class="featured">
+        <a href="https://www.amazon.com/dp/B0HK6WHP8X" target="_blank" rel="noopener"><img src="img/believe.jpg" alt="Cover of Believe: An Expositional Commentary on John 1:1–2:25"></a>
+        <div class="copy">
+          <div class="eyebrow">Newest &middot; September 2026</div>
+          <h3>Believe&hellip;</h3>
+          <p>An expositional commentary on John 1:1&ndash;2:25, and the first volume of a series through the Gospel of John. The opening chapters of John, where the Word becomes flesh and every sign asks one question: will you believe?</p>
+          <a class="btn solid" href="https://www.amazon.com/dp/B0HK6WHP8X" target="_blank" rel="noopener">Get it on Amazon</a>
+        </div>
+      </div>
+
+      <div class="books">
+        <a class="book" href="https://www.amazon.com/dp/B0H6C8RGXB" target="_blank" rel="noopener"><img src="img/ten-words.jpg" alt="" loading="lazy"><span class="t">Ten Words to Build Your Life On</span><span class="y">2026</span></a>
+        <a class="book" href="https://www.amazon.com/dp/B0FY417BNM" target="_blank" rel="noopener"><img src="img/mortal-flesh.jpg" alt="" loading="lazy"><span class="t">Let All Mortal Flesh Keep Silence</span><span class="y">2025 &middot; Advent devotional</span></a>
+        <a class="book" href="https://www.amazon.com/dp/B0FKNJK11X" target="_blank" rel="noopener"><img src="img/heaven.jpg" alt="" loading="lazy"><span class="t">Heaven: Our Forever Home</span><span class="y">2025</span></a>
+        <a class="book" href="https://www.amazon.com/dp/B0FKNJ9FS8" target="_blank" rel="noopener"><img src="img/i-still-do.jpg" alt="" loading="lazy"><span class="t">I Still Do</span><span class="y">2025</span></a>
+        <a class="book" href="https://www.amazon.com/dp/B0BGQPBMX7" target="_blank" rel="noopener"><img src="img/christmas-carol.jpg" alt="" loading="lazy"><span class="t">A Christmas Carol: Reader's Edition</span><span class="y">2022</span></a>
+        <a class="book" href="https://www.amazon.com/dp/B09XFBDYQN" target="_blank" rel="noopener"><img src="img/journeys.jpg" alt="" loading="lazy"><span class="t">Journeys: An Adoption Story</span><span class="y">2022</span></a>
+        <a class="book" href="https://www.amazon.com/dp/B09DP6SSZP" target="_blank" rel="noopener"><img src="img/fearful-men.jpg" alt="" loading="lazy"><span class="t">We Are Not Descended from Fearful Men</span><span class="y">2021</span></a>
+        <a class="book" href="https://www.amazon.com/dp/B07YK5G9DC" target="_blank" rel="noopener"><img src="img/membership.jpg" alt="" loading="lazy"><span class="t">Membership Matters</span><span class="y">2019</span></a>
+      </div>
+
+      <div class="coming">
+        <p><strong>What's next?</strong> More volumes of <em>Believe</em>, a book on the doctrines of grace, and a Philippians devotional are on the desk. Follow their progress at Cool Publishers.</p>
+        <a class="btn" href="https://coolpublishers.com/#desk" target="_blank" rel="noopener">Books in progress &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band watch" id="watch">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><div class="eyebrow">Sermons &amp; Devotionals</div><h2>Watch and listen</h2></div>
+        <p>Sermon series and short devotionals on YouTube. Choose a series below to play it here.</p>
+      </div>
+
+      <div class="player" id="player"></div>
+      <div class="player-cap"><span>Now showing: <b id="now">The Gospel of John (Believe)</b></span><a id="on-yt" href="https://www.youtube.com/playlist?list=PLfBd30FirIEc" target="_blank" rel="noopener">Open on YouTube &rarr;</a></div>
+
+      <div class="lists" id="lists"></div>
+
+      <div class="archive">
+        <p>Sermons are moving to YouTube a few at a time. Until they're all there, the full archive is on the Cool Community Church website and in the church app.</p>
+        <div class="btns">
+          <a class="btn solid" href="https://www.youtube.com/@DrewBuell?sub_confirmation=1" target="_blank" rel="noopener">Subscribe on YouTube</a>
+          <a class="btn" href="https://coolchurch.org/media" target="_blank" rel="noopener">Sermon archive</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="writing">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><div class="eyebrow">Writing</div><h2>Latest on Substack</h2></div>
+        <a class="more" href="https://drewbuell.substack.com/archive" target="_blank" rel="noopener">All essays &rarr;</a>
+      </div>
+      <div class="essays" id="essays">
+        <a class="essay lead" href="https://drewbuell.substack.com/" target="_blank" rel="noopener"><span class="t">Drew's Substack</span><span class="d">Reflections on life, ministry, and theology from a small-town pastor.</span></a>
+      </div>
+      <div class="subscribe">
+        <a class="btn solid" href="https://drewbuell.substack.com/subscribe" target="_blank" rel="noopener">Subscribe free</a>
+        <p>New essays delivered by email.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band about" id="about">
+    <div class="wrap">
+      <div class="bio">
+        <div class="eyebrow">About</div>
+        <h2>A pastor who writes</h2>
+        <p>Drew Buell has served as pastor-teacher of Cool Community Church in the Sierra foothills of Northern California since 2010. He preaches verse by verse through books of the Bible, and most of what he writes begins in the pulpit before it is reworked for the page.</p>
+        <p>Drew graduated from The Master's University in 2001 with a degree in Bible Exposition. He went on to The Master's Seminary, completing a Master of Divinity in 2005 and a Doctor of Ministry in 2021. Before coming to Cool he served as associate pastor of student ministries and worship at Pine Mountain Christian Community Church, and then as an associate pastor at Emmanuel Baptist Church in Mount Vernon, Washington.</p>
+        <p>Drew grew up in a Christian home with godly parents. He married Amy in 2001, and the Lord has given them four children: Micah, Cody, Luke, and Ruth.</p>
+      </div>
+      <ul class="facts">
+        <li><span>Church</span>Pastor-Teacher, Cool Community Church, since 2010</li>
+        <li><span>Education</span>B.A., The Master's University<br>M.Div. &amp; D.Min., The Master's Seminary</li>
+        <li><span>Books</span>Nine titles, from Advent devotionals to an expositional commentary on John</li>
+        <li><span>Home</span>Cool, California, with Amy and their four children</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="church" id="church">
+    <div class="wrap">
+      <div class="eyebrow">Cool Community Church</div>
+      <h2>Worship with us in the Sierra foothills</h2>
+      <p>Cool Community Church exists to know Christ and to make Him known, through commitment to the Word of God, the people of God, and the glory of God.</p>
+      <p class="when">Sunday mornings at 10:30 &middot; Cool, California</p>
+      <div class="btns">
+        <a class="btn solid" href="https://coolchurch.org/i-m-new" target="_blank" rel="noopener">Plan a visit</a>
+        <a class="btn" href="https://coolchurch.org" target="_blank" rel="noopener">coolchurch.org</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band drone" id="drone">
+    <div class="wrap">
+      <a class="drone-shot" href="drone/"><img src="drone/media/donner-approach.jpg" alt="Donner Lake and the Sierra from the air" loading="lazy"></a>
+      <div class="drone-copy">
+        <div class="eyebrow">On the side</div>
+        <h2>Cool Drone Footage</h2>
+        <p>When he's not in the study or the pulpit, Drew enjoys flying his drone to capture cool footage: granite summits, alpine lakes, and the canyons of the American River, from the High Sierra down to the foothills.</p>
+        <a class="btn" href="drone/">Watch the footage &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="elsewhere">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><div class="eyebrow">Elsewhere</div><h2>Find Drew online</h2></div>
+      </div>
+      <div class="elsewhere">
+        <a class="link" href="https://www.youtube.com/@DrewBuell" target="_blank" rel="noopener"><span class="k">YouTube</span><span class="t">Sermons &amp; devotionals</span><span class="d">New sermons from Cool Community Church, plus short devotional videos.</span></a>
+        <a class="link" href="https://drewbuell.substack.com/" target="_blank" rel="noopener"><span class="k">Substack</span><span class="t">Essays</span><span class="d">Reflections on life, ministry, and theology.</span></a>
+        <a class="link" href="https://www.facebook.com/drewbuell" target="_blank" rel="noopener"><span class="k">Facebook</span><span class="t">Updates</span><span class="d">News and new releases.</span></a>
+        <a class="link" href="https://coolpublishers.com" target="_blank" rel="noopener"><span class="k">Cool Publishers</span><span class="t">The imprint</span><span class="d">Books in progress and what's coming next.</span></a>
+        <a class="link" href="drone/"><span class="k">Cool Drone Footage</span><span class="t">From the air</span><span class="d">The High Sierra, Lake Tahoe, and the American River, filmed by drone.</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; <span id="yr">2026</span> Drew Buell &middot; Cool, California</p>
+    <p>Looking for the drone footage? It's <a href="drone/">here</a>.</p>
+    <p class="legal">Sermon Uploader uses YouTube API Services. <a href="privacy.html">Privacy Policy</a> &middot; <a href="terms.html">Terms of Service</a></p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// YouTube series. To add one, add a line with its playlist ID (the part after
+// "list=") and the ID of a video to use as its thumbnail.
+const SERIES = [
+  { list: 'PLfBd30FirIEc', thumb: 'SjPAkVLC9gA', title: 'The Gospel of John (Believe)', note: 'Verse by verse through John', count: 30 },
+  { list: 'PLCIJZ41DGMOw', thumb: 'seSjzLnafxE', title: 'The Doctrines of Grace', note: 'A study of the doctrines of grace', count: 3 },
+  { list: 'PLG8_L8yUaR4k', thumb: 'Se41eSP0cEQ', title: 'Devotional Videos', note: 'Short devotionals from Scripture', count: 7 },
+  { list: 'PLaPv4Z2TRFiI', thumb: 'U28aa13Pgjs', title: 'Sermon Shorts', note: 'Short clips from recent sermons', count: 16 },
+];
+
+const player = document.getElementById('player');
+const now = document.getElementById('now');
+const onYt = document.getElementById('on-yt');
+const lists = document.getElementById('lists');
+
+function play(s, autoplay) {
+  player.innerHTML = '';
+  const f = document.createElement('iframe');
+  f.src = 'https://www.youtube-nocookie.com/embed/videoseries?list=' + s.list + (autoplay ? '&autoplay=1' : '');
+  f.title = s.title + ': Drew Buell';
+  f.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen';
+  f.referrerPolicy = 'strict-origin-when-cross-origin';
+  f.allowFullscreen = true;
+  player.append(f);
+  now.textContent = s.title;
+  onYt.href = 'https://www.youtube.com/playlist?list=' + s.list;
+  for (const b of lists.children) b.setAttribute('aria-pressed', b.dataset.list === s.list);
+}
+
+for (const s of SERIES) {
+  const b = document.createElement('button');
+  b.className = 'list';
+  b.dataset.list = s.list;
+  b.innerHTML = '<span class="thumb"><img src="https://i.ytimg.com/vi/' + s.thumb + '/hqdefault.jpg" alt="" loading="lazy"><span class="count">' + s.count + ' videos</span></span>'
+    + '<span class="t"></span><span class="d"></span>';
+  b.querySelector('.t').textContent = s.title;
+  b.querySelector('.d').textContent = s.note;
+  b.addEventListener('click', () => { play(s, true); player.scrollIntoView({ behavior: 'smooth', block: 'center' }); });
+  lists.append(b);
+}
+play(SERIES[0], false);
+
+// Latest Substack essays. Cool Publishers refreshes its copy of the feed daily
+// (scripts/update-substack.ps1 there), so this site reads that one first and
+// falls back to its own data/substack.json. If neither loads, the static card stays.
+(async function () {
+  const box = document.getElementById('essays');
+  let posts = [];
+  for (const url of ['https://coolpublishers.com/data/substack.json', 'data/substack.json']) {
+    try {
+      const res = await fetch(url, { cache: 'no-cache' });
+      if (!res.ok) continue;
+      posts = ((await res.json()).posts || []).slice(0, 3);
+      if (posts.length) break;
+    } catch (e) { /* try the next source */ }
+  }
+  if (!posts.length) return;
+  const fmt = new Intl.DateTimeFormat('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  box.replaceChildren(...posts.map((p, i) => {
+    const a = document.createElement('a');
+    a.className = 'essay' + (i === 0 ? ' lead' : '');
+    a.href = p.link; a.target = '_blank'; a.rel = 'noopener';
+    if (p.image && i === 0) {
+      const img = document.createElement('img');
+      img.src = p.image; img.alt = ''; img.loading = 'lazy';
+      a.append(img);
+    }
+    const add = (cls, s) => { if (!s) return; const el = document.createElement('span'); el.className = cls; el.textContent = s; a.append(el); };
+    add('y', p.date ? fmt.format(new Date(p.date)) : '');
+    add('t', p.title);
+    add('d', p.subtitle);
+    return a;
+  }));
+})();
+</script>
 </body>
 </html>
